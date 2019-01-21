@@ -67,7 +67,7 @@ $(document).ready(function(){
 		checkin = checkin.replace(' ','');
 		checkout = checkout.replace(' ','');
 		$.ajax({
-                url:'http://13.112.91.33:8000/data_fetch',
+                url:'data_fetch',
                 type:'GET',
                 cache:false,
                 data:{
