@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>データー・スクラップー・システム</title>
+    <!-- Icons-->
+    <link href={% static "vendors/@coreui/icons/css/coreui-icons.min.css" %} rel="stylesheet" >
+    <link href={% static "vendors/flag-icon-css/css/flag-icon.min.css" %} rel="stylesheet" >
+    <link href={% static "vendors/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" >
+    <link href={% static "vendors/simple-line-icons/css/simple-line-icons.css" %} rel="stylesheet" >
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <!-- Main styles for this application-->
+    <link href={% static "css/style.css" %} rel="stylesheet">
+    <link href={% static "css/custom.css" %} rel="stylesheet">
+    <link href={% static "vendors/pace-progress/css/pace.min.css" %} rel="stylesheet">
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <header class="app-header navbar">
+      <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+<!--
+        <img class="navbar-brand-full" src="img/brand/logo.svg" width="89" height="25" alt="Scrappy Logo">
+        <img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="Scrappy Logo">
+--> スクラップー
+      </a>
+      <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    </header>
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="nav-icon icon-speedometer"></i> データーフェッチ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout" >
+                <i class="nav-icon icon-drop"></i> ログアウト</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+      </div>
+      <main class="main">
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">データーフェッチ画面</li>
+        </ol>
+          
+          
+        <div class="container-fluid">
+              <!-- Main block starts -->
+            
+            <div class="animated fadeIn">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                      <!-- Card body starts -->
+                          <div class="row">
+                            <div class="form-group col-md-6">
+                              <label for="city">対象画面のURL</label>
+                              <input class="form-control" id="url" type="text" placeholder="Booking.comの検索URLをご入力してください" value="">
+                              <div class="invalid-feedback">Booking.comに検索してURLをご入力してください</div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="postal-code">期間</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <input class="form-control" id="daterange" type="text" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pt-4">
+                                <button type="button" class="btn btn-success" id="fetch_btn"><i class="fa fa-refresh"></i> 読み込む</button>
+                                 <button type="button" id="import" class="btn btn-primary text-white show-on-data-load"><i class="fa fa-download"></i> CSVダウンロード</button>
+                            </div>
+                          </div>
+                          <!-- /.row-->
+                            <div id="resultBlock" style="">
+                              <hr>
+                              <table class="table table-responsive-sm table-bordered" id="result_data">
+                                <thead>
+                                  <tr>
+                                    <th>日付</th>
+                                    <th>ホテル名</th>
+                                    <th>値段</th>
+                                    <th>評価</th>
+                                    <th>住所</th>
+                                    <th>稼働率</th>
+                                    <th class='hideme altclass'>URL</th>
+                                  </tr>
+                                </thead> 
+                                <tbody>
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-4" style="display:none">
+                    <div class="card">
+                        <div class="card-body">
+                          <div class="">
+                            <span>流れ：</span>
+                            <ul class="pl-10 mt-20 decimal-li">
+                              <li class="no-padding-l">ユーザーがURLを入力ボックスにペーストします。</li>
+                              <li class="no-padding-l">データフェッチする為の開始日と　終了日をカレンダーから選べる</li>
+                              <li class="no-padding-l">「読み込む」ボタンを押します。</li>
+                              <li class="no-padding-l">システムがサンパル結果を表示します</li>
+                              <li class="no-padding-l">結果が正しかったら、CSVダウンロード ボタンを押したらCSVダウンロードします。</li>
+                            </ul>
+                            <hr>
+                            <p>読み込むボタン押した後に１−２分ぐらい処理時間かかります。その時にロード画像が表示されます</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div> 
+                  </div>
+                    
+            </div>
+            <!-- /.row-->
+          </div>
+          <!-- Main block ends -->
+      </main>
+    </div>
+    <footer class="app-footer">
+      
+      
+      <div class="ml-auto">
+        <span>Copyright 2019</span>
+      </div>
+    </footer>
+    <!-- CoreUI and necessary plugins-->
+    <script src={% static "vendors/jquery/js/jquery.min.js" %}></script>
+    <script type="text/javascript" src={% static "js/table2csv.js" %}></script>
+    <script src={% static "vendors/popper.js/js/popper.min.js" %}></script>
+    <script src={% static "vendors/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src={% static "vendors/pace-progress/js/pace.min.js" %}></script>
+    <script src={% static "vendors/perfect-scrollbar/js/perfect-scrollbar.min.js" %}></script>
+    <script src={% static "vendors/@coreui/coreui/js/coreui.min.js" %}></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script type="text/javascript" src={% static "js/booking.js" %}></script>
+  </body>
+</html>

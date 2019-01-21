@@ -1,0 +1,25 @@
+body .no-padding-l{
+	padding-left: 0; 
+}
+body .pl-10{
+	padding-left: 10px;
+}
+body .mt-20{
+	margin-top: 20px;
+}
+body .decimal-li{
+	list-style-type: decimal;
+}
+body .decimal-li li{
+	margin-bottom: 17px;
+}
+
+body main{
+	background: white;	
+}
+body .hideme{
+	display: none;
+}
+body .show-on-data-load{
+	display: none;
+}

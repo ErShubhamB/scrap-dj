@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ログイン画面</title>
+    <!-- Icons-->
+    <link href={% static "vendors/@coreui/icons/css/coreui-icons.min.css" %} rel="stylesheet">
+    <link href={% static "vendors/flag-icon-css/css/flag-icon.min.css" %} rel="stylesheet">
+    <link href={% static "vendors/font-awesome/css/font-awesome.min.css" %} rel="stylesheet">
+    <link href={% static "vendors/simple-line-icons/css/simple-line-icons.css" %} rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href={% static "css/style.css" %} rel="stylesheet">
+    <link href={% static "css/custom.css" %} rel="stylesheet">
+
+    <link href={% static "vendors/pace-progress/css/pace.min.css" %} rel="stylesheet">
+  </head>
+  <body class="app flex-row align-items-center">
+    <div class="container">
+    <form onsubmit="return false">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <h1>ログイン</h1>
+                <p style="color: red" id="error" class="hideme">エラー</p>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="icon-user"></i>
+                    </span>
+                  </div>
+                  {% csrf_token %}
+                  <input id="userid" class="form-control" type="text" name="userid" placeholder="メールアドレス">
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="icon-lock"></i>
+                    </span>
+                  </div>
+                  <input class="form-control" id="password" type="password" name="password" placeholder="パスワード">
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button class="btn btn-primary px-4" type="button" id="login_buttton"><i class="fa fa-sign-in"></i>&nbsp;ログイン</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src={% static "vendors/jquery/js/jquery.min.js" %}></script>
+    <script src={% static "vendors/bootstrap/js/bootstrap.min.js"%}></script>
+    <script src={% static "vendors/pace-progress/js/pace.min.js"%}></script>
+    <script src={% static "vendors/@coreui/coreui/js/coreui.min.js"%}></script>
+    <script type="text/javascript" src={% static "js/booking.js" %}></script>
+  </body>
+</html>
