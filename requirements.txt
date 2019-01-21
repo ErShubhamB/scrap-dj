@@ -1,3 +1,8 @@
 django
 gunicorn
 django-heroku
+lxml==4.2.1
+bs4
+requests
+openpyxl==2.5.4
+argcomplete==1.8.1
