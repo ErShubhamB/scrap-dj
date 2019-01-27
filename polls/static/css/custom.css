@@ -1,25 +1,66 @@
-body .no-padding-l{
+.no-padding-l{
 	padding-left: 0; 
 }
-body .pl-10{
+.pl-10{
 	padding-left: 10px;
 }
-body .mt-20{
+.mt-20{
 	margin-top: 20px;
 }
-body .decimal-li{
+.decimal-li{
 	list-style-type: decimal;
 }
-body .decimal-li li{
+.decimal-li li{
 	margin-bottom: 17px;
 }
 
-body main{
+main{
 	background: white;	
 }
-body .hideme{
+.hideme{
 	display: none;
 }
-body .show-on-data-load{
+
+#result_data th, #result_data td {
+    min-width: 50px;
+    padding: 8px;
+}
+
+.no-data .show-on-data-load,
+.no-data .show-while-data-loading,
+.no-data .hide-on-data-load{
 	display: none;
+}
+.data-loading .show-on-data-load {
+    display: none;
+}
+.data-loaded .show-on-data-load{
+	display: inline-table;
+}
+.data-loading .show-while-data-loading{
+	display: block;
+}
+
+
+.data-loaded .show-while-data-loading {
+    display: none;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+.removeField{
+	background: #f86c6b;
+    color: white;
+    border: 1px solid #f86c6b;
+    font-weight: 900;
+}
+
+.addField{
+	background: #4dbd74;
+    color: white;
+    border: 1px solid #4dbd74;
+    font-weight: 900;
+    font-size: 14px;
 }
