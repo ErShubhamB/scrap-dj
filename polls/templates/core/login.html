@@ -20,21 +20,21 @@
   </head>
   <body class="app flex-row align-items-center">
     <div class="container">
-    <form onsubmit="return false">
+    <form id="loginForm"> 
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-8 col-lg-6">
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
                 <h1>ログイン</h1>
-                <p style="color: red" id="error" class="hideme">エラー</p>
+                <p style="color: red" id="error" class="hideme">パスワードまたはメールアドレスが正しくありません。</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="icon-user"></i>
                     </span>
                   </div>
-                  {% csrf_token %}
+                    {% csrf_token %}
                   <input id="userid" class="form-control" type="text" name="userid" placeholder="メールアドレス">
                 </div>
                 <div class="input-group mb-4">
@@ -46,8 +46,8 @@
                   <input class="form-control" id="password" type="password" name="password" placeholder="パスワード">
                 </div>
                 <div class="row">
-                  <div class="col-6">
-                    <button class="btn btn-primary px-4" type="button" id="login_buttton"><i class="fa fa-sign-in"></i>&nbsp;ログイン</button>
+                  <div class="col-md-8 col-lg-6">
+                    <button class="btn btn-primary px-4" type="submit" id="login_button"><i class="fa fa-sign-in"></i>&nbsp;ログイン</button>
                   </div>
                 </div>
               </div>
